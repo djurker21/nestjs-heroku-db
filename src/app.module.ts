@@ -13,6 +13,12 @@ import { UsersModule } from './users/users.module';
       type: 'postgres',
       entities: [__dirname + '/**/entities/*.entity{.ts,.js}'],
       synchronize: true,
+      ssl: true,
+      extra: {
+        ssl: {
+          rejectUnauthorized: false,
+        },
+      },
     }),
     UsersModule,
   ],
