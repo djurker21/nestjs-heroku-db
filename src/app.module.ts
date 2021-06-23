@@ -16,12 +16,12 @@ import { JwtAuthGuard } from './auth/jwt-auth.guard';
       type: 'postgres',
       entities: [__dirname + '/**/entities/*.entity{.ts,.js}'],
       synchronize: true,
-      // ssl: true,
-      // extra: {
-      //   ssl: {
-      //     rejectUnauthorized: false,
-      //   },
-      // },
+      ssl: true,
+      extra: {
+        ssl: {
+          rejectUnauthorized: false,
+        },
+      },
     }),
     UsersModule,
     AuthModule,
