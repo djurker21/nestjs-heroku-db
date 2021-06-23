@@ -37,7 +37,7 @@ export class AppController {
   @Public()
   @Post('auth/register')
   async register(@Body() createUserDto: CreateUserDto) {
-    return this.usersService.create(createUserDto);
+    return this.usersService.createWithBcrypt(createUserDto);
   }
 
   @Get('profile')
