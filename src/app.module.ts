@@ -9,12 +9,8 @@ import { UsersModule } from './users/users.module';
   imports: [
     ConfigModule.forRoot(),
     TypeOrmModule.forRoot({
+      url: process.env.DATABASE_URL,
       type: 'postgres',
-      host: 'localhost',
-      port: 5432,
-      username: 'postgres',
-      password: 'example',
-      database: 'nestjs_test2',
       entities: [__dirname + '/**/entities/*.entity{.ts,.js}'],
       synchronize: true,
     }),
