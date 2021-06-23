@@ -18,6 +18,10 @@ export class UsersService {
     return this.usersRepository.findOne(id);
   }
 
+  findOneByUsername(username: string): Promise<User> {
+    return this.usersRepository.findOne({ where: { username: username } });
+  }
+
   async remove(id: string): Promise<void> {
     await this.usersRepository.delete(id);
   }
